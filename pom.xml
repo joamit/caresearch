@@ -14,6 +14,10 @@
         <module>api-gateway</module>
         <module>app-service</module>
         <module>discovery-service</module>
+        <module>api-commons</module>
+        <module>engine-service</module>
+        <module>manufacturer-service</module>
+        <module>api-services</module>
     </modules>
     <packaging>pom</packaging>
 
@@ -31,6 +35,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>1.8</java.version>
+        <springfox.version>2.7.0</springfox.version>
     </properties>
 
     <dependencies>
@@ -50,6 +55,18 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>Finchley.M8</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 
     <build>
         <plugins>
