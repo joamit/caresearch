@@ -7,16 +7,10 @@
     <artifactId>caresearch</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <modules>
-        <module>car-service</module>
-        <module>media-service</module>
-        <module>user-service</module>
-        <module>lookup-service</module>
-        <module>api-gateway</module>
-        <module>app-service</module>
-        <module>discovery-service</module>
+        <module>app-site</module>
         <module>api-commons</module>
-        <module>engine-service</module>
-        <module>manufacturer-service</module>
+        <module>discovery-service</module>
+        <module>app-service</module>
         <module>api-services</module>
     </modules>
     <packaging>pom</packaging>
