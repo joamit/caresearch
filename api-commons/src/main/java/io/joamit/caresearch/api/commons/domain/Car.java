@@ -1,11 +1,12 @@
 package io.joamit.caresearch.api.commons.domain;
 
-import org.joda.time.DateTime;
 import org.springframework.data.annotation.CreatedBy;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
+
+import java.util.Date;
 
 @Document
 public class Car {
@@ -14,9 +15,9 @@ public class Car {
     private String id;
     private String name;
     private String description;
-    private DateTime launched;
+    private Date launched;
     private Boolean stillProduced;
-    private DateTime discontinued;
+    private Date discontinued;
     @DBRef
     private Manufacturer manufacturer;
     @DBRef
@@ -24,7 +25,7 @@ public class Car {
     @CreatedBy
     private User user;
     @CreatedDate
-    private DateTime createdDate;
+    private Date createdDate;
 
     public String getId() {
         return id;
@@ -50,11 +51,11 @@ public class Car {
         this.description = description;
     }
 
-    public DateTime getLaunched() {
+    public Date getLaunched() {
         return launched;
     }
 
-    public void setLaunched(DateTime launched) {
+    public void setLaunched(Date launched) {
         this.launched = launched;
     }
 
@@ -66,11 +67,11 @@ public class Car {
         this.stillProduced = stillProduced;
     }
 
-    public DateTime getDiscontinued() {
+    public Date getDiscontinued() {
         return discontinued;
     }
 
-    public void setDiscontinued(DateTime discontinued) {
+    public void setDiscontinued(Date discontinued) {
         this.discontinued = discontinued;
     }
 
@@ -98,11 +99,11 @@ public class Car {
         this.user = user;
     }
 
-    public DateTime getCreatedDate() {
+    public Date getCreatedDate() {
         return createdDate;
     }
 
-    public void setCreatedDate(DateTime createdDate) {
+    public void setCreatedDate(Date createdDate) {
         this.createdDate = createdDate;
     }
 }

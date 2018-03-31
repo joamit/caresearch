@@ -1,16 +1,17 @@
 package io.joamit.caresearch.api.commons.domain;
 
-import org.joda.time.DateTime;
+
+import java.util.Date;
 
 public final class ManufacturerBuilder {
     private String id;
     private String name;
     private Country country;
-    private DateTime startYear;
-    private DateTime endYear;
+    private Date startYear;
+    private Date endYear;
     private Boolean stillInBusiness;
     private User user;
-    private DateTime createdDate;
+    private Date createdDate;
 
     private ManufacturerBuilder() {
     }
@@ -34,12 +35,12 @@ public final class ManufacturerBuilder {
         return this;
     }
 
-    public ManufacturerBuilder withStartYear(DateTime startYear) {
+    public ManufacturerBuilder withStartYear(Date startYear) {
         this.startYear = startYear;
         return this;
     }
 
-    public ManufacturerBuilder withEndYear(DateTime endYear) {
+    public ManufacturerBuilder withEndYear(Date endYear) {
         this.endYear = endYear;
         return this;
     }
@@ -54,7 +55,7 @@ public final class ManufacturerBuilder {
         return this;
     }
 
-    public ManufacturerBuilder withCreatedDate(DateTime createdDate) {
+    public ManufacturerBuilder withCreatedDate(Date createdDate) {
         this.createdDate = createdDate;
         return this;
     }

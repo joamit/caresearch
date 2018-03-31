@@ -8,18 +8,17 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import java.util.List;
-import java.util.Optional;
 
 @FeignClient("engine-service")
 public interface EngineService {
 
-    @RequestMapping(value = "/name/{name}/manufacturer/{manufacturer}", method = RequestMethod.GET)
-    Optional<Engine> findEngineByNameAndManufacturer(@PathVariable("name") String name, @PathVariable("manufacturer") String manufacturer);
+    @RequestMapping(value = "/engines/name/{name}", method = RequestMethod.GET)
+    Engine findByName(@PathVariable("name") String name);
 
-    @RequestMapping(value = "/", method = RequestMethod.PUT)
+    @RequestMapping(value = "/engines/", method = RequestMethod.PUT)
     Engine save(@RequestBody Engine engine);
 
-    @RequestMapping(value = "/", method = RequestMethod.GET)
+    @RequestMapping(value = "/engines/", method = RequestMethod.GET)
     List<Engine> findAll();
 
 }

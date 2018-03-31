@@ -1,11 +1,12 @@
 package io.joamit.caresearch.api.commons.domain;
 
-import org.joda.time.DateTime;
 import org.springframework.data.annotation.CreatedBy;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
+
+import java.util.Date;
 
 @Document
 public class Engine {
@@ -22,7 +23,7 @@ public class Engine {
     @CreatedBy
     private User user;
     @CreatedDate
-    private DateTime createdDate;
+    private Date createdDate;
 
     public String getId() {
         return id;
@@ -88,11 +89,11 @@ public class Engine {
         this.user = user;
     }
 
-    public DateTime getCreatedDate() {
+    public Date getCreatedDate() {
         return createdDate;
     }
 
-    public void setCreatedDate(DateTime createdDate) {
+    public void setCreatedDate(Date createdDate) {
         this.createdDate = createdDate;
     }
 }

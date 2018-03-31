@@ -1,0 +1,76 @@
+{
+  "createdDate": "2018-03-31T13:57:15.608Z",
+  "description": "The Ford Mustang is an USn car manufactured by Ford. It was originally based on the platform of the second generation North USn Ford Falcon, a compact car. The original 1962 Ford Mustang I two-seater concept car had evolved into the 1963 Mustang II four-seater concept car which Ford used to pretest how the public would take interest in the first production Mustang. The 1963 Mustang II concept car was designed with a variation of the production model's front and rear ends with a roof that was 2.7 inches shorter. Introduced early on April 17, 1963 (16 days after the Plymouth Barracuda), and thus dubbed as a 1964 by Mustang fans, the 1965 Mustang was the automaker's most successful launch since the Model A. The Mustang has undergone several transformations to its current sixth generation.",
+  "discontinued": "2018-03-31T13:57:15.608Z",
+  "engine": {
+    "createdDate": "2018-03-31T13:57:15.608Z",
+    "description": "The Taunus V4 was a 60° V4 piston engine with one balance shaft, introduced by Ford Motor Company in Germany in 1962. The German V4 was built in the Cologne plant and powered the Ford Taunus and German versions of the Consul, Capri, and Transit.",
+    "horsePower": 40,
+    "manufacturer": {
+      "country": "US",
+      "createdDate": "2018-03-31T13:57:15.608Z",
+      "endYear": "2018-03-31T13:57:15.608Z",
+      "name": "Ford",
+      "startYear": "2018-03-31T13:57:15.608Z",
+      "stillInBusiness": true,
+      "user": {
+        "address": "Inzynerska, Wroclaw",
+        "country": "PL",
+        "emailId": "joamit13@gmail.com",
+        "firstName": "Amit",
+        "id": "USDJLIAIKJSDF",
+        "lastName": "Joshi",
+        "password": "password",
+        "phone": "666379264",
+        "username": "joamit"
+      }
+    },
+    "name": "Ford Taunus V4",
+    "piston": 4,
+    "user": {
+      "address": "Inzynerska, Wroclaw",
+      "country": "PL",
+      "emailId": "joamit13@gmail.com",
+      "firstName": "Amit",
+      "id": "USDJLIAIKJSDF",
+      "lastName": "Joshi",
+      "password": "password",
+      "phone": "666379264",
+      "username": "joamit"
+    },
+    "valves": 4
+  },
+  "launched": "2018-03-31T13:57:15.608Z",
+  "manufacturer": {
+    "country": "US",
+    "createdDate": "2018-03-31T13:57:15.608Z",
+    "endYear": "2018-03-31T13:57:15.608Z",
+    "name": "Ford",
+    "startYear": "2018-03-31T13:57:15.608Z",
+    "stillInBusiness": true,
+    "user": {
+      "address": "Inzynerska, Wroclaw",
+      "country": "PL",
+      "emailId": "joamit13@gmail.com",
+      "firstName": "Amit",
+      "id": "USDJLIAIKJSDF",
+      "lastName": "Joshi",
+      "password": "password",
+      "phone": "666379264",
+      "username": "joamit"
+    }
+  },
+  "name": "Ford Mustang",
+  "stillProduced": true,
+  "user": {
+    "address": "Inzynerska, Wroclaw",
+    "country": "PL",
+    "emailId": "joamit13@gmail.com",
+    "firstName": "Amit",
+    "id": "USDJLIAIKJSDF",
+    "lastName": "Joshi",
+    "password": "password",
+    "phone": "666379264",
+    "username": "joamit"
+  }
+}

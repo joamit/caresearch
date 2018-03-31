@@ -1,18 +1,19 @@
 package io.joamit.caresearch.api.commons.domain;
 
-import org.joda.time.DateTime;
+
+import java.util.Date;
 
 public final class CarBuilder {
     private String id;
     private String name;
     private String description;
-    private DateTime launched;
+    private Date launched;
     private Boolean stillProduced;
-    private DateTime discontinued;
+    private Date discontinued;
     private Manufacturer manufacturer;
     private Engine engine;
     private User user;
-    private DateTime createdDate;
+    private Date createdDate;
 
     private CarBuilder() {
     }
@@ -36,7 +37,7 @@ public final class CarBuilder {
         return this;
     }
 
-    public CarBuilder withLaunched(DateTime launched) {
+    public CarBuilder withLaunched(Date launched) {
         this.launched = launched;
         return this;
     }
@@ -46,7 +47,7 @@ public final class CarBuilder {
         return this;
     }
 
-    public CarBuilder withDiscontinued(DateTime discontinued) {
+    public CarBuilder withDiscontinued(Date discontinued) {
         this.discontinued = discontinued;
         return this;
     }
@@ -66,7 +67,7 @@ public final class CarBuilder {
         return this;
     }
 
-    public CarBuilder withCreatedDate(DateTime createdDate) {
+    public CarBuilder withCreatedDate(Date createdDate) {
         this.createdDate = createdDate;
         return this;
     }

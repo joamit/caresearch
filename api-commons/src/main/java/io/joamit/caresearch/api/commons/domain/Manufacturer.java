@@ -1,10 +1,11 @@
 package io.joamit.caresearch.api.commons.domain;
 
-import org.joda.time.DateTime;
 import org.springframework.data.annotation.CreatedBy;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
+
+import java.util.Date;
 
 @Document
 public class Manufacturer {
@@ -13,13 +14,13 @@ public class Manufacturer {
     private String id;
     private String name;
     private Country country;
-    private DateTime startYear;
-    private DateTime endYear;
+    private Date startYear;
+    private Date endYear;
     private Boolean stillInBusiness;
     @CreatedBy
     private User user;
     @CreatedDate
-    private DateTime createdDate;
+    private Date createdDate;
 
     public String getId() {
         return id;
@@ -45,19 +46,19 @@ public class Manufacturer {
         this.country = country;
     }
 
-    public DateTime getStartYear() {
+    public Date getStartYear() {
         return startYear;
     }
 
-    public void setStartYear(DateTime startYear) {
+    public void setStartYear(Date startYear) {
         this.startYear = startYear;
     }
 
-    public DateTime getEndYear() {
+    public Date getEndYear() {
         return endYear;
     }
 
-    public void setEndYear(DateTime endYear) {
+    public void setEndYear(Date endYear) {
         this.endYear = endYear;
     }
 
@@ -77,11 +78,11 @@ public class Manufacturer {
         this.user = user;
     }
 
-    public DateTime getCreatedDate() {
+    public Date getCreatedDate() {
         return createdDate;
     }
 
-    public void setCreatedDate(DateTime createdDate) {
+    public void setCreatedDate(Date createdDate) {
         this.createdDate = createdDate;
     }
 }

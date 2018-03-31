@@ -59,19 +59,19 @@ public class CarController {
 
         Manufacturer manufacturer = car.getManufacturer();
         if (StringUtils.isEmpty(manufacturer.getId())) {
-            Optional<Manufacturer> existingManufacturer = this.manufacturerService.findManufacturerByName(manufacturer.getName());
-            manufacturer = existingManufacturer.isPresent() ? existingManufacturer.get() : this.manufacturerService.save(manufacturer);
+            Manufacturer existingManufacturer = this.manufacturerService.findByName(manufacturer.getName());
+            manufacturer = existingManufacturer == null ? this.manufacturerService.save(manufacturer) : existingManufacturer;
         }
         car.setManufacturer(manufacturer);
 
         Engine engine = car.getEngine();
         if (StringUtils.isEmpty(engine.getId())) {
-            Optional<Engine> existingEngine = this.engineService.findEngineByNameAndManufacturer(engine.getName(), manufacturer.getName());
-            if (existingEngine.isPresent()) {
-                engine = existingEngine.get();
-            } else {
+            Engine existingEngine = this.engineService.findByName(engine.getName());
+            if (existingEngine == null) {
                 //we save the engine first and then add it back to the model
                 engine = this.engineService.save(engine);
+            } else {
+                engine = existingEngine;
             }
         }
         car.setEngine(engine);

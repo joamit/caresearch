@@ -50,11 +50,11 @@ public class EngineController {
         Validations.validateEngine(engine);
         Manufacturer manufacturer = engine.getManufacturer();
         if (StringUtils.isEmpty(manufacturer.getId())) {
-            Optional<Manufacturer> existingManufacturer = this.manufacturerService.findManufacturerByName(manufacturer.getName());
-            if (existingManufacturer.isPresent()) {
-                manufacturer = existingManufacturer.get();
-            } else {
+            Manufacturer existingManufacturer = this.manufacturerService.findManufacturerByName(manufacturer.getName());
+            if (existingManufacturer == null) {
                 manufacturer = this.manufacturerService.save(manufacturer);
+            } else {
+                manufacturer = existingManufacturer;
             }
         }
         engine.setManufacturer(manufacturer);

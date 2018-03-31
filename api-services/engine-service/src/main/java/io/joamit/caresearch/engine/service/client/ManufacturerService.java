@@ -8,18 +8,17 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import java.util.List;
-import java.util.Optional;
 
 @FeignClient("manufacturer-service")
 public interface ManufacturerService {
 
-    @RequestMapping(value = "/name/{name}", method = RequestMethod.GET)
-    Optional<Manufacturer> findManufacturerByName(@PathVariable("name") String name);
+    @RequestMapping(value = "/manufacturers/name/{name}", method = RequestMethod.GET)
+    Manufacturer findManufacturerByName(@PathVariable("name") String name);
 
-    @RequestMapping(value = "/", method = RequestMethod.PUT)
+    @RequestMapping(value = "/manufacturers/", method = RequestMethod.PUT)
     Manufacturer save(@RequestBody Manufacturer manufacturer);
 
-    @RequestMapping(value = "/", method = RequestMethod.GET)
+    @RequestMapping(value = "/manufacturers/", method = RequestMethod.GET)
     List<Manufacturer> findAll();
 
 }

@@ -1,6 +1,6 @@
 package io.joamit.caresearch.api.commons.domain;
 
-import org.joda.time.DateTime;
+import java.util.Date;
 
 public final class EngineBuilder {
     private String id;
@@ -11,7 +11,7 @@ public final class EngineBuilder {
     private String description;
     private Manufacturer manufacturer;
     private User user;
-    private DateTime createdDate;
+    private Date createdDate;
 
     private EngineBuilder() {
     }
@@ -60,7 +60,7 @@ public final class EngineBuilder {
         return this;
     }
 
-    public EngineBuilder withCreatedDate(DateTime createdDate) {
+    public EngineBuilder withCreatedDate(Date createdDate) {
         this.createdDate = createdDate;
         return this;
     }
