@@ -1,4 +1,4 @@
-package io.joamit.caresearch.engine.service.config;
+package io.joamit.caresearch.manufacturer.service.config;
 
 
 import org.springframework.context.annotation.Bean;
@@ -21,7 +21,7 @@ import static springfox.documentation.builders.RequestHandlerSelectors.basePacka
 @EnableSwagger2
 public class SwaggerConfig {
 
-    private static final String CONTROLLER_BASE_PACKAGE = "io.joamit.caresearch.engine.service.controller";
+    private static final String CONTROLLER_BASE_PACKAGE = "io.joamit.caresearch.manufacturer.service.controller";
 
     /**
      * Enables swagger only for the controllers created in defined package
@@ -46,8 +46,8 @@ public class SwaggerConfig {
      */
     private ApiInfo apiInfo() {
         return new ApiInfo(
-                "Engine Service REST API",
-                "This API can be used to perform Engine Domain related CRUD operations",
+                "Manufacturer Service REST API",
+                "This API can be used to perform Manufacturer Domain related CRUD operations",
                 "0.0.1-SNAPSHOT",
                 "ToBeDefined",
                 new Contact("Amit Joshi", "https://github.com/joamit/caresearch", "joamit13@gmail.com"),

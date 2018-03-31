@@ -40,32 +40,27 @@ public class CarController {
             notes = "This api will return the entire database, to be used with caution.",
             produces = MediaType.APPLICATION_JSON_VALUE, response = Car[].class)
     @RequestMapping(value = "/", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
-    public List<Car> getAllCars() {
+    public List<Car> findAll() {
         return this.carRepository.findAll();
     }
 
-    @ApiOperation(value = "Find a car by id.", produces = MediaType.APPLICATION_JSON_VALUE, response = Car.class)
-    @RequestMapping(value = "/{id}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
-    public Optional<Car> getCar(@PathVariable("id") String id) {
-        return this.carRepository.findById(id);
+    @ApiOperation(value = "Find a car by name.", produces = MediaType.APPLICATION_JSON_VALUE, response = Car.class)
+    @RequestMapping(value = "/name/{name}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+    public Optional<Car> findByName(@PathVariable("name") String name) {
+        return this.carRepository.findByName(name);
     }
 
     @ApiOperation(value = "Save a new car.",
             notes = "Car must have a valid engine and manufacturer for it to be saved to the database. If engine or the manufacturer already exists, existing entries will be used instead!",
             produces = MediaType.APPLICATION_JSON_VALUE, response = Car.class)
     @RequestMapping(value = "/", method = RequestMethod.PUT, produces = MediaType.APPLICATION_JSON_VALUE)
-    public Optional<Car> saveCar(@RequestBody Car car) {
+    public Car save(@RequestBody Car car) {
         Validations.validateCar(car);
 
         Manufacturer manufacturer = car.getManufacturer();
         if (StringUtils.isEmpty(manufacturer.getId())) {
             Optional<Manufacturer> existingManufacturer = this.manufacturerService.findManufacturerByName(manufacturer.getName());
-            if (existingManufacturer.isPresent()) {
-                manufacturer = existingManufacturer.get();
-            } else {
-                //we save the manufacturer first and then add it back to the model
-                manufacturer = this.manufacturerService.saveManufacturer(manufacturer);
-            }
+            manufacturer = existingManufacturer.isPresent() ? existingManufacturer.get() : this.manufacturerService.save(manufacturer);
         }
         car.setManufacturer(manufacturer);
 
@@ -76,13 +71,12 @@ public class CarController {
                 engine = existingEngine.get();
             } else {
                 //we save the engine first and then add it back to the model
-                engine = this.engineService.saveEngine(engine);
+                engine = this.engineService.save(engine);
             }
         }
         car.setEngine(engine);
 
-        car = this.carRepository.save(car);
-        return Optional.of(car);
+        return this.carRepository.save(car);
     }
 
 

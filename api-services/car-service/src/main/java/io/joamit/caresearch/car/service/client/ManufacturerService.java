@@ -17,7 +17,7 @@ public interface ManufacturerService {
     Optional<Manufacturer> findManufacturerByName(@PathVariable("name") String name);
 
     @RequestMapping(value = "/", method = RequestMethod.PUT)
-    Manufacturer saveManufacturer(@RequestBody Manufacturer manufacturer);
+    Manufacturer save(@RequestBody Manufacturer manufacturer);
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
     List<Manufacturer> findAll();

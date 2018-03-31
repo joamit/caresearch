@@ -1,6 +1,6 @@
-package io.joamit.caresearch.car.service.client;
+package io.joamit.caresearch.engine.service.client;
 
-import io.joamit.caresearch.api.commons.domain.Engine;
+import io.joamit.caresearch.api.commons.domain.Manufacturer;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -10,16 +10,16 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import java.util.List;
 import java.util.Optional;
 
-@FeignClient("engine-service")
-public interface EngineService {
+@FeignClient("manufacturer-service")
+public interface ManufacturerService {
 
-    @RequestMapping(value = "/name/{name}/manufacturer/{manufacturer}", method = RequestMethod.GET)
-    Optional<Engine> findEngineByNameAndManufacturer(@PathVariable("name") String name, @PathVariable("manufacturer") String manufacturer);
+    @RequestMapping(value = "/name/{name}", method = RequestMethod.GET)
+    Optional<Manufacturer> findManufacturerByName(@PathVariable("name") String name);
 
     @RequestMapping(value = "/", method = RequestMethod.PUT)
-    Engine save(@RequestBody Engine engine);
+    Manufacturer save(@RequestBody Manufacturer manufacturer);
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
-    List<Engine> findAll();
+    List<Manufacturer> findAll();
 
 }
